@@ -1,31 +1,48 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using UnityEngine;
 
 
-namespace NodeCanvas.Tasks.Conditions {
+namespace NodeCanvas.Tasks.Conditions
+{
 
-	public class DetectObject : ConditionTask {
+    public class DetectObject : ConditionTask
+    {
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit(){
-			return null;
-		}
+        public LayerMask layerToDetect;
+        public float detectionRadius;
+        protected override string OnInit()
+        {
+            return null;
+        }
 
-		//Called whenever the condition gets enabled.
-		protected override void OnEnable() {
-			
-		}
+        //Called whenever the condition gets enabled.
+        protected override void OnEnable()
+        {
 
-		//Called whenever the condition gets disabled.
-		protected override void OnDisable() {
-			
-		}
+        }
 
-		//Called once per frame while the condition is active.
-		//Return whether the condition is success or failure.
-		protected override bool OnCheck() {
-			return true;
-		}
-	}
+        //Called whenever the condition gets disabled.
+        protected override void OnDisable()
+        {
+
+        }
+
+        //Called once per frame while the condition is active.
+        //Return whether the condition is success or failure.
+        protected override bool OnCheck()
+        {
+            Collider[] detections = Physics.OverlapSphere(agent.transform.position, detectionRadius, layerToDetect);
+            if (detections.Length > 0)
+            {
+                Debug.Log("Detected patroller");
+                return true;
+            }
+            else
+            {
+                Debug.Log("Didnt detect patroller");
+                return false;
+            }
+        }
+    }
 }
