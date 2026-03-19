@@ -10,18 +10,29 @@ public class GarbageSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToSpawnGarbage))
         {
-            bool coordsFound = false;
-            //choose 2 random coords within 2 bounds
-            while (!coordsFound)
-            {
-                Vector3 coords = ChooseRandomCoords();
-                RaycastHit hit;
-                Collision[] collisions = Physics.Raycast(coords, Vector3.down, 10, groundLayer, out hit);
-            }
-            //raycast to check whether its over the floor
-            //if yes spawn, if not choose 2 random coords again and re-try.
+            SpawnGarbage();
+        }
+    }
+
+    void SpawnGarbage()
+    {
+        //coordsFound bool will facilitate a while loop until set to true.
+        bool coordsFound = false;
+        Vector3 coords = new Vector3();
+
+        while (!coordsFound)
+        {
+            //select a random x and z keeping y at 10.
+            coords = ChooseRandomCoords();
+
+            //raycast to check whether the selected coordinates are above the ground. If not, it will select 2 random coordinates again.
+            if (Physics.Raycast(coords, Vector3.down, Mathf.Infinity, groundLayer)) coordsFound = true;
 
         }
+
+        //spawn the garbage using the now selected coords.
+        GameObject spawnedGarbage = Instantiate(garbagePrefab);
+        spawnedGarbage.transform.position = coords;
     }
 
     Vector3 ChooseRandomCoords()

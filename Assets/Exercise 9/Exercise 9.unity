@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68742975}
+  - component: {fileID: 68742976}
   m_Layer: 0
   m_Name: Garbage Spawner
   m_TagString: Untagged
@@ -150,6 +151,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68742976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68742974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447d674f08f32ba4ba5264047323c93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GarbageSpawner
+  garbagePrefab: {fileID: 5526770885700649751, guid: 8342cd8ad5df6e44b8fecb7d03c4373f, type: 3}
+  keyToSpawnGarbage: 32
+  xCoordBounds: {x: -13, y: 13}
+  zCoordBounds: {x: -13, y: 13}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &155347986
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +183,7 @@ GameObject:
   - component: {fileID: 155347989}
   - component: {fileID: 155347988}
   - component: {fileID: 155347991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +436,7 @@ GameObject:
   - component: {fileID: 712117505}
   - component: {fileID: 712117504}
   - component: {fileID: 712117507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor 1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.BehaviourTrees.BehaviourTreeOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"monitorMode":1,"returnMode":1,"_action":{"$type":"NodeCanvas.Tasks.Actions.DisposeAT"},"_position":{"x":502.0375,"y":206.6762},"$type":"NodeCanvas.BehaviourTrees.Monitor","$id":"0"},{"_position":{"x":503.9344,"y":387.9496},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"1"},{"_position":{"x":681.2447,"y":229.3035},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"monitorMode":1,"returnMode":1,"_position":{"x":502.0375,"y":206.6762},"$type":"NodeCanvas.BehaviourTrees.Monitor","$id":"0"},{"_position":{"x":503.9344,"y":387.9496},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"1"},{"_position":{"x":681.2447,"y":229.3035},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.41
@@ -859,7 +879,7 @@ GameObject:
   - component: {fileID: 1046965249}
   - component: {fileID: 1046965248}
   - component: {fileID: 1046965251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +1006,7 @@ GameObject:
   - component: {fileID: 1089277812}
   - component: {fileID: 1089277815}
   - component: {fileID: 1089277816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155540000626235946, guid: 8342cd8ad5df6e44b8fecb7d03c4373f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.67
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 7155540000626235946, guid: 8342cd8ad5df6e44b8fecb7d03c4373f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1356,7 +1376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7155540000626235946, guid: 8342cd8ad5df6e44b8fecb7d03c4373f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.48
+      value: 13.18
       objectReference: {fileID: 0}
     - target: {fileID: 7155540000626235946, guid: 8342cd8ad5df6e44b8fecb7d03c4373f, type: 3}
       propertyPath: m_LocalRotation.w
