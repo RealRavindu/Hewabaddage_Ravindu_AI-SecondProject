@@ -9,23 +9,27 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class ApproachAT : ActionTask {
 
-		public BBParameter<Transform> destinationTransform;
-		public float stoppingDistanceFromDest;
-		private NavMeshAgent navAgent;
+		public float stoppingDistanceFromDest, arrivalThreshold;
+        private Vector3 destination;
 
-		protected override string OnInit() {
+        private NavMeshAgent navAgent;
+        public GarbageSpawner garbageSpawner;
+
+
+        protected override string OnInit() {
+			navAgent = agent.GetComponent<NavMeshAgent>();
 			return null;
 		}
 
 		protected override void OnExecute() {
-			Vector3 displacement = destinationTransform.value.position - agent.transform.position;
-			Vector3 destination = displacement - Vector3.one * stoppingDistanceFromDest;
+			if (garbageSpawner.spawnedGarbageList.Count < 1 || garbageSpawner.spawnedGarbageList[0] == null) EndAction(false);
+			destination = garbageSpawner.spawnedGarbageList[0].position;
+			destination.y = 0;
 			navAgent.SetDestination(destination);
-			EndAction(true);
 		}
 
 		protected override void OnUpdate() {
-			
+			if ((agent.transform.position - navAgent.destination).magnitude < arrivalThreshold) EndAction(true);
 		}
 
 		protected override void OnStop() {

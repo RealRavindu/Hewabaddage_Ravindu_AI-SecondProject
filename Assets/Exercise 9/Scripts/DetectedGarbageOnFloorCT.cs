@@ -1,14 +1,14 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-
+using ParadoxNotion.Serialization.FullSerializer;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Conditions
 {
 
     public class DetectedGarbageOnFloorCT : ConditionTask
     {
-
-        public GarbageOnFloor floor;
+        public GarbageSpawner garbageSpawner;
         private Blackboard blackboard;
         protected override string OnInit()
         {
@@ -28,9 +28,9 @@ namespace NodeCanvas.Tasks.Conditions
 
         protected override bool OnCheck()
         {
-            if (floor.Trash.Count > 1)
+            Debug.Log("Checking");
+            if (garbageSpawner.spawnedGarbageList.Count > 0)
             {
-                blackboard.SetVariableValue("trash", floor.Trash[0]);
                 return true;
             }
             else return false;
