@@ -31,6 +31,7 @@ namespace NodeCanvas.Tasks.Actions {
             garbage.parent = agent.transform; //set the garbage's parent as the player so that it follows them when they move/ rotate.
             blackboard.SetVariableValue("garbageInHand", garbage.gameObject); //set it as a blackboard variable so that the next script (disposeAT) can reference that when it tries to throw the garbage.
 			Debug.Log("Before removing: " + garbageSpawner.spawnedGarbageList.Count);
+			Debug.Log(garbageSpawner.spawnedGarbageList.Contains(garbage));
             garbageSpawner.spawnedGarbageList.Remove(garbage); //removing the garbage from the list so that it doesn't try to get re-selected when it's null (since deleted by void)
 			Debug.Log("after removing: " +garbageSpawner.spawnedGarbageList.Count);
 			EndAction(true);

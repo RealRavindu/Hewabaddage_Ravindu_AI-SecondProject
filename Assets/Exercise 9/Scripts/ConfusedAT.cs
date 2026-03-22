@@ -1,7 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
-
+using System.Collections;
 
 namespace NodeCanvas.Tasks.Actions {
 
@@ -26,6 +26,16 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnPause() {
 			
+		}
+
+		IEnumerator confusedCR()
+		{
+			float t = 0;
+			while(t < 1)
+			{
+				t += Time.deltaTime;
+				yield return null;
+			}
 		}
 	}
 }
