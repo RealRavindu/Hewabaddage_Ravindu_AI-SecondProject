@@ -28,9 +28,11 @@ namespace NodeCanvas.Tasks.Conditions
 
         protected override bool OnCheck()
         {
-            Debug.Log("Checking");
             if (garbageSpawner.spawnedGarbageList.Count > 0)
             {
+                Vector3 position = garbageSpawner.spawnedGarbageList[0].position;
+                position.y = 0;
+                blackboard.SetVariableValue("trashPosition", position);
                 return true;
             }
             else return false;
