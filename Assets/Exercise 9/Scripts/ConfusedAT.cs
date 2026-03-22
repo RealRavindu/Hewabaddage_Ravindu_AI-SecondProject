@@ -35,7 +35,6 @@ namespace NodeCanvas.Tasks.Actions {
 		private IEnumerator confusedCR()
 		{
 			float t = 0;
-			//Vector3 directionToCam = (Camera.main.transform.position - garbageMan.position).normalized;
 			Vector3 position = Camera.main.WorldToScreenPoint(garbageMan.position);
 			questionMark.position = position;
 			questionMark.gameObject.SetActive(true);
