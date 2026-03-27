@@ -23,6 +23,7 @@ namespace NodeCanvas.Tasks.Actions
         protected override void OnExecute()
         {
             startPos = AATransform.value.position;
+            time = 0;
         }
 
         protected override void OnUpdate()
