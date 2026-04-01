@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class AutoAttack : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Transform targetTransform;
+    public float speed, hitThreshold;
+
+    private void Update()
     {
-        
+        Vector3 displacementToTarget =targetTransform.position - transform.position;
+        transform.position += displacementToTarget.normalized * speed * Time.deltaTime;
+        SelfDestruct(displacementToTarget.magnitude);
     }
 
-    // Update is called once per frame
-    void Update()
+    void SelfDestruct(float displacement)
     {
-        
+        if(displacement < hitThreshold) Destroy(gameObject);
     }
 }
