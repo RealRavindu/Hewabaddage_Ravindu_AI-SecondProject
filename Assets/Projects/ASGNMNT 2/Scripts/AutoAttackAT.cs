@@ -2,45 +2,47 @@ using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using System;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace NodeCanvas.Tasks.Actions
 {
 
     public class AutoAttackAT : ActionTask
     {
-        public BBParameter<GameObject> target;
-        public BBParameter<Transform> AATransform;
-        private Vector3 startPos;
-        public float timeToReachTarget;
-        private float time;
-
+        public BBParameter<Transform> targetTransform;
+        public BBParameter<float> attackSpeed;
+        public BBParameter<float> attackDamage;
+        public GameObject autoPrefab;
+        private float timePassed;
+        public Slider autoSlider;
+        private Material allyMat;
         protected override string OnInit()
         {
+            allyMat = agent.GetComponent<MeshRenderer>().material;
             return null;
         }
 
         protected override void OnExecute()
         {
-            startPos = AATransform.value.position;
-            time = 0;
+            timePassed = 0;
+            autoSlider.gameObject.SetActive(true);
         }
 
         protected override void OnUpdate()
         {
-            time += Time.deltaTime / timeToReachTarget;
-            AATransform.value.position = Vector3.Lerp(startPos, target.value.transform.position, time);
-            if (time > 1)
-            {
-                GameObject.Destroy(AATransform.value.gameObject);
-                EndAction(true);
-            }
+            autoSlider.value = timePassed * attackSpeed.value / 1;
+            timePassed += Time.deltaTime;
+
+            if (timePassed * attackSpeed.value > 1) EndAction(true);
         }
 
 
         protected override void OnStop()
         {
-
+            autoSlider.gameObject.SetActive(false);
+            GameObject autoAttackObject = GameObject.Instantiate(autoPrefab);
+            AutoAttack autoattack = autoAttackObject.GetComponent<AutoAttack>();
+            autoattack.Init(attackSpeed.value, attackDamage.value, targetTransform.value, agent.transform.position, allyMat);
         }
 
         protected override void OnPause()
