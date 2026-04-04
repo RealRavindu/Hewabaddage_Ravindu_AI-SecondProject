@@ -25,7 +25,6 @@ public class MinionSpawner : MonoBehaviour
 
     private IEnumerator spawnWave()
     {
-        Debug.Log("Spawning wave, team: " + team);
         int numberSpawned = 0;
         while(numberSpawned < numberOfMinions)
         {
