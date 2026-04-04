@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public class Targetable : MonoBehaviour
+{
+    private BaseStats baseStats;
+    private float team;
+    private MeshRenderer mR;
+    private MaterialPropertyBlock mPB;
+    private void Start()
+    {
+        baseStats = GetComponent<BaseStats>();
+        team = baseStats.team;
+        mR = GetComponent<MeshRenderer>();
+        mPB = new MaterialPropertyBlock();
+    }
+    private void OnMouseEnter()
+    {
+        if(team == 1)
+        {
+            mR.GetPropertyBlock(mPB);
+
+            mPB.SetFloat("_mouseIsHovering", 1);
+
+            mR.SetPropertyBlock(mPB);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (team == 1)
+        {
+            mR.GetPropertyBlock(mPB);
+
+            mPB.SetFloat("_mouseIsHovering", 0);
+
+            mR.SetPropertyBlock(mPB);
+        }
+    }
+}
