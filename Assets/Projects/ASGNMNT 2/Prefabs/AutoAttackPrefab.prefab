@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8125464178874611915}
   - component: {fileID: 200583004699045725}
   - component: {fileID: 8948081415347235533}
-  - component: {fileID: 1283178575385384654}
   - component: {fileID: 1856418307857659716}
   - component: {fileID: 1088745017349444063}
   m_Layer: 0
@@ -115,25 +114,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1283178575385384654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8140368767720785089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bfa5a4990c28df4f8a8ce3c14edc0f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseStats
-  team: 0
-  health: 7
-  attackSpeed: 0.1
-  range: 4
-  attackDamage: 1
-  abilityPower: 0
-  moveSpeed: 2
 --- !u!114 &1856418307857659716
 MonoBehaviour:
   m_ObjectHideFlags: 0

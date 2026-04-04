@@ -16,13 +16,22 @@ public class AutoAttack : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 displacementToTarget =targetTransform.position - transform.position;
-        transform.position += displacementToTarget.normalized* autoBaseSpeed * speed * Time.deltaTime;
+        //destroy the autoattack incase the target dies before it reaches it
+        if (targetTransform == null)
+        {
+            Destroy(gameObject); return;
+        }
+        Vector3 displacementToTarget = targetTransform.position - transform.position;
+        transform.position += displacementToTarget.normalized * autoBaseSpeed * speed * Time.deltaTime;
         SelfDestruct(displacementToTarget.magnitude);
     }
 
     void SelfDestruct(float displacement)
     {
-        if(displacement < hitThreshold) Destroy(gameObject);
+        if (displacement < hitThreshold)
+        {
+            targetTransform.GetComponent<BaseStats>().health -= damage;
+            Destroy(gameObject);
+        }
     }
 }

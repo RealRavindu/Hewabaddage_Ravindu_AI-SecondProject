@@ -18,6 +18,7 @@ namespace NodeCanvas.Tasks.Actions
         private Material allyMat;
         protected override string OnInit()
         {
+            autoSlider = agent.transform.GetChild(0).GetChild(0).GetComponent<Slider>();
             allyMat = agent.GetComponent<MeshRenderer>().material;
             return null;
         }
