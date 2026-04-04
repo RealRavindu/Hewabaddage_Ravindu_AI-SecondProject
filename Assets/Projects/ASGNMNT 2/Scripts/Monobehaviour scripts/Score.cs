@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
         {
             _score = value;
             scoreText.text = value.ToString();
-            StartCoroutine(scoreIncreaseAnimation());
+            StartCoroutine(ScoreIncreaseAnimation());
         }
     }
     private float _score;
@@ -33,12 +33,11 @@ public class Score : MonoBehaviour
     {
         Color.RGBToHSV(scoreText.color,out c_hue, out c_saturation, out c_value);
     }
-    private IEnumerator scoreIncreaseAnimation()
+    private IEnumerator ScoreIncreaseAnimation()
     {
         float t = 0;
         while(t < 1)
         {
-            Debug.Log("Saturation curve eavaluates to: " + saturationCurve.Evaluate(t)*saturationAmplitude);
             t += Time.deltaTime / animationLength;
             scoreText.color = Color.HSVToRGB(c_hue, c_saturation + saturationCurve.Evaluate(t)*saturationAmplitude, c_value);
             yield return null;

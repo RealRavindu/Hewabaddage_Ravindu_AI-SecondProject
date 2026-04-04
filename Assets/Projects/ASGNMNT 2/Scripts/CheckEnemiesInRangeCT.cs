@@ -9,8 +9,11 @@ namespace NodeCanvas.Tasks.Conditions {
 
 		public BBParameter<float> AARange;
 		public BBParameter<GameObject> target;
-		public LayerMask enemyLayerMask, allyLayerMask;
+		private float teamLayer;
+		public LayerMask enemyLayerMask;
 		protected override string OnInit(){
+			teamLayer = agent.GetComponent<BaseStats>().team;
+			enemyLayerMask = LayerMask.GetMask(teamLayer == 1 ? "BlueTeam" : "RedTeam");
 			return null;
 		}
 

@@ -130,7 +130,7 @@ MonoBehaviour:
   speed: 0
   hitThreshold: 0.5
   damage: 0
-  autoBaseSpeed: 13
+  autoBaseSpeed: 20
 --- !u!96 &1088745017349444063
 TrailRenderer:
   serializedVersion: 4
