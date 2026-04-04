@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.BehaviourTrees.BehaviourTreeOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":204.3396,"y":386.6668},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_action":{"targetTransform":{"_name":"target","_targetVariableID":"4fb03e6a-0fdb-4841-92a4-1a289566dd79"},"attackSpeed":{"_name":"attackSpeed","_targetVariableID":"a39865a4-dc7c-4c0c-a055-0640875c9d55"},"attackDamage":{"_name":"attackDamage","_targetVariableID":"9aa5cb88-64d1-4e6a-88ae-d2976c720492"},"autoPrefab":1,"autoSlider":2,"$type":"NodeCanvas.Tasks.Actions.AutoAttackAT"},"_position":{"x":635.0,"y":388.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":420.3396,"y":381.6668},"$type":"NodeCanvas.BehaviourTrees.ActionNode"},{"_action":{"targetTransform":{"_name":"target","_targetVariableID":"4fb03e6a-0fdb-4841-92a4-1a289566dd79"},"attackSpeed":{"_name":"attackSpeed","_targetVariableID":"a39865a4-dc7c-4c0c-a055-0640875c9d55"},"attackDamage":{"_name":"attackDamage","_targetVariableID":"9aa5cb88-64d1-4e6a-88ae-d2976c720492"},"autoPrefab":1,"autoSlider":2,"$type":"NodeCanvas.Tasks.Actions.AutoAttackAT"},"_position":{"x":635.0,"y":388.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 8140368767720785089, guid: e65305e595237f141a8fd645ec75ca6d, type: 3}
@@ -522,7 +522,7 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: -222, y: 21}
+    _translation: {x: -143, y: 31}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0

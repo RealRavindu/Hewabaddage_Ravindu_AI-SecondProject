@@ -15,7 +15,6 @@ public class MinionSpawner : MonoBehaviour
         Debug.Log(timePassed);
         if (timePassed == 0 )
         {
-            Debug.Log("Wave spawning CR: " +waveSpawningCR);
             //spawn minions
             if(waveSpawningCR == null) waveSpawningCR = StartCoroutine(spawnWave());
 
