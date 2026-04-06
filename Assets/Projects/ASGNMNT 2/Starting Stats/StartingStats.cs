@@ -11,4 +11,5 @@ public class StartingStats : ScriptableObject
     public float attackDamage;
     public float abilityPower;
     public float moveSpeed;
+    public entityType entity;
 }

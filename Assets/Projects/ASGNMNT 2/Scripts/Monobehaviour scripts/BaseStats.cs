@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class BaseStats : MonoBehaviour
 {
     public StartingStats startingStats;
+    private Health healthScript;
     public float team
     {
         get
@@ -25,6 +26,7 @@ public class BaseStats : MonoBehaviour
         {
             _health = value;
             _healthSlider.value = health;
+            if (value <= 0) healthScript.OnDeath(entity);
         }
     }
 
@@ -35,11 +37,13 @@ public class BaseStats : MonoBehaviour
     public float attackDamage;
     public float abilityPower;
     public float moveSpeed;
+    public entityType entity; 
     public Material blueMat, redMat;
     private Slider _healthSlider;
 
     private void Start()
     {
+        healthScript = GetComponent<Health>();
         _healthSlider = transform.GetChild(0).GetChild(1).GetComponent<Slider>();
         health = _healthSlider.maxValue = startingStats.health;
         attackSpeed = startingStats.attackSpeed;
@@ -52,4 +56,12 @@ public class BaseStats : MonoBehaviour
 
 
     }
+}
+
+public enum entityType
+{
+    Champion,
+    Minion,
+    NeutralMob,
+    Structure
 }

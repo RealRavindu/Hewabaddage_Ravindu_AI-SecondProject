@@ -31,10 +31,10 @@ namespace NodeCanvas.Tasks.Conditions {
 			{
 				Debug.Log("I've detected an enemy");
 				target.value = detectedEnemies[0].gameObject;
-				return true; 
+				return false; 
 			}
             Debug.Log("I've not detected an enemy");
-            return false;
+            return true;
 		}
 	}
 }

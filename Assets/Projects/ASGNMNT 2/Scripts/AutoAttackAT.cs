@@ -34,21 +34,30 @@ namespace NodeCanvas.Tasks.Actions
             autoSlider.value = timePassed * attackSpeed.value / 1;
             timePassed += Time.deltaTime;
 
-            if (timePassed * attackSpeed.value > 1) EndAction(true);
+            if (timePassed * attackSpeed.value > 1)
+            {
+                spawnAuto();
+                EndAction(true);
+            }
         }
 
 
         protected override void OnStop()
         {
-            autoSlider.gameObject.SetActive(false);
-            GameObject autoAttackObject = GameObject.Instantiate(autoPrefab);
-            AutoAttack autoattack = autoAttackObject.GetComponent<AutoAttack>();
-            autoattack.Init(attackSpeed.value, attackDamage.value, targetTransform.value, agent.transform.position, allyMat);
+
         }
 
         protected override void OnPause()
         {
 
+        }
+
+        void spawnAuto()
+        {
+            autoSlider.gameObject.SetActive(false);
+            GameObject autoAttackObject = GameObject.Instantiate(autoPrefab);
+            AutoAttack autoattack = autoAttackObject.GetComponent<AutoAttack>();
+            autoattack.Init(attackSpeed.value, attackDamage.value, targetTransform.value, agent.transform.position, allyMat);
         }
     }
 }
