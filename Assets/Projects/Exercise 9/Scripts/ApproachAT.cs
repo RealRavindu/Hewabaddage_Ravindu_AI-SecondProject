@@ -26,7 +26,6 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnUpdate() {
-			Debug.Log((agent.transform.position - navAgent.destination).magnitude);
 			if ((agent.transform.position - navAgent.destination).magnitude < arrivalThreshold) EndAction(true);
 		}
 

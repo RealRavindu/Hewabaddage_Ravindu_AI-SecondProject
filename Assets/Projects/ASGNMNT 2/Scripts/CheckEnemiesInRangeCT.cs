@@ -1,6 +1,7 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+using System.Collections.Generic;
 
 
 namespace NodeCanvas.Tasks.Conditions {
@@ -26,14 +27,21 @@ namespace NodeCanvas.Tasks.Conditions {
 		}
 
 		protected override bool OnCheck() {
-			Collider[] detectedEnemies = Physics.OverlapSphere(agent.transform.position, AARange.value, enemyLayerMask);
-			if (detectedEnemies.Length > 0)
+			Collider[] detectedEnemyThings = Physics.OverlapSphere(agent.transform.position, AARange.value, enemyLayerMask);
+			List<Collider> detectedEnemies = new List<Collider>();
+
+            foreach (Collider collider in detectedEnemyThings)
 			{
-				Debug.Log("I've detected an enemy");
+				if(collider.tag != "NeutralMob" && collider.tag != "Portal")
+				{
+					detectedEnemies.Add(collider);
+				}
+			}
+			if (detectedEnemies.Count > 0)
+			{
 				target.value = detectedEnemies[0].gameObject;
 				return false; 
 			}
-            Debug.Log("I've not detected an enemy");
             return true;
 		}
 	}

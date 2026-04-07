@@ -2,7 +2,20 @@ using UnityEngine;
 
 public class AutoAttack : MonoBehaviour
 {
-    public Transform targetTransform;
+    public Transform targetTransform
+    {
+        get { return _targetTransform; }
+        set
+        {
+            if (value == null)
+            {
+                //destroy the object and stop running the script incase the target dies before the auto reaches them
+                Destroy(gameObject); return;
+            }
+            _targetTransform = value;
+        }
+    }
+    private Transform _targetTransform;
     public float speed, hitThreshold, damage, autoBaseSpeed;
 
     public void Init(float speedTarg, float damageTarg, Transform target, Vector3 startPos, Material allyMat)
@@ -16,11 +29,6 @@ public class AutoAttack : MonoBehaviour
     }
     private void Update()
     {
-        //destroy the autoattack incase the target dies before it reaches it
-        if (targetTransform == null)
-        {
-            Destroy(gameObject); return;
-        }
         Vector3 displacementToTarget = targetTransform.position - transform.position;
         transform.position += displacementToTarget.normalized * autoBaseSpeed * speed * Time.deltaTime;
         SelfDestruct(displacementToTarget.magnitude);
@@ -30,6 +38,7 @@ public class AutoAttack : MonoBehaviour
     {
         if (displacement < hitThreshold)
         {
+
             targetTransform.GetComponent<BaseStats>().health -= damage;
             Destroy(gameObject);
         }

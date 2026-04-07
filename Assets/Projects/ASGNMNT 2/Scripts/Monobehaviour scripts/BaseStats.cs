@@ -37,7 +37,19 @@ public class BaseStats : MonoBehaviour
     public float attackDamage;
     public float abilityPower;
     public float moveSpeed;
-    public entityType entity; 
+    public entityType entity;
+    private entityType _entityType
+    {
+        get
+        {
+            return _entityType;
+        }
+        set
+        {
+            _entityType = value;
+            tag = value.ToString();
+        }
+    }
     public Material blueMat, redMat;
     private Slider _healthSlider;
 
@@ -52,7 +64,7 @@ public class BaseStats : MonoBehaviour
         abilityPower = startingStats.abilityPower;
         moveSpeed = startingStats.moveSpeed;
         //3 means that this obj shouldnt get a team assigned to it, and it will automatically be assigned by whatever is spawning it. So it is neutral.
-        if(startingStats.team != 3) team = startingStats.team;
+        if (startingStats.team != 3) team = startingStats.team;
 
 
     }

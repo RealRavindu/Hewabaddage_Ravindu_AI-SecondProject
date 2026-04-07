@@ -33,7 +33,7 @@ namespace NodeCanvas.Tasks.Actions {
 				Vector3 displacementToHazard = collider.transform.position - agent.transform.position;
 				totalDisplacement -= displacementToHazard;
 				if (displacementToHazard.magnitude/(detectionDistance+1) > strength) strength = displacementToHazard.magnitude/ (detectionDistance + 1);
-				Debug.Log(strength);
+				
 			}
 			moveDirection.value += totalDisplacement.normalized *strength;
 		}

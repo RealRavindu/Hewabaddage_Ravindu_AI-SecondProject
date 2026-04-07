@@ -12,7 +12,6 @@ public class MinionSpawner : MonoBehaviour
     private Coroutine waveSpawningCR;
     private void Update()
     {
-        Debug.Log(timePassed);
         if (timePassed == 0 )
         {
             //spawn minions
@@ -34,6 +33,6 @@ public class MinionSpawner : MonoBehaviour
             numberSpawned++;
             yield return new WaitForSeconds(spawnInterval);
         }
-
+        waveSpawningCR = null;
     }
 }

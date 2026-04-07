@@ -26,6 +26,7 @@ namespace NodeCanvas.Tasks.Actions
         protected override void OnExecute()
         {
             timePassed = 0;
+            autoSlider.value = 0;
             autoSlider.gameObject.SetActive(true);
         }
 
@@ -44,7 +45,7 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnStop()
         {
-
+            autoSlider.gameObject.SetActive(false);
         }
 
         protected override void OnPause()
