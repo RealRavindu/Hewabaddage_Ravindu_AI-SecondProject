@@ -8,9 +8,7 @@ public class CameraController : MonoBehaviour
     public Transform player;
     private bool camLocked, absoluteCamLocked;
     private Vector3 camLockPosOffset;
-    public MeshRenderer safeSpace;
-    public LayerMask safeSpaceLayerMask;
-
+    public float edgeThreshold;
     private void Start()
     {
         camLockPosOffset = Camera.main.transform.position;
@@ -39,8 +37,9 @@ public class CameraController : MonoBehaviour
         if (!absoluteCamLocked)
         {
             //detecting if mouse is on edge of screen or nearby, to move the camera
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (!Physics.Raycast(ray, Mathf.Infinity, safeSpaceLayerMask))
+            Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+            if (mousePos.x < edgeThreshold || mousePos.x > 1 - edgeThreshold || mousePos.y < edgeThreshold || mousePos.y > 1 - edgeThreshold)
             {
                 MoveCamera();
             }
@@ -52,7 +51,6 @@ public class CameraController : MonoBehaviour
         Vector3 direction = (Input.mousePosition - Camera.main.ViewportToScreenPoint(Vector2.one * 0.5f)).normalized;
         Rigidbody camRB = Camera.main.GetComponent<Rigidbody>();
         camRB.AddForce(new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime, ForceMode.Impulse);
-
     }
 
 }
