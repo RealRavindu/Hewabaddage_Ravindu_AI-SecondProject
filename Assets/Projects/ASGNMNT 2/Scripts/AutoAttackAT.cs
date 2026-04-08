@@ -32,10 +32,10 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnUpdate()
         {
-            autoSlider.value = timePassed * attackSpeed.value / 1;
-            timePassed += Time.deltaTime;
+            autoSlider.value = timePassed / 1;
+            timePassed += Time.deltaTime * attackSpeed.value;
 
-            if (timePassed * attackSpeed.value > 1)
+            if (timePassed  > 1)
             {
                 spawnAuto();
                 EndAction(true);

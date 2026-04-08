@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Ze Wrath
   m_EditorClassIdentifier: Assembly-CSharp::StartingStats
   team: 1
-  health: 10
+  health: 15
   attackSpeed: 0.3
   range: 7
   attackDamage: 2
   abilityPower: 6
   moveSpeed: 3
+  entity: 0

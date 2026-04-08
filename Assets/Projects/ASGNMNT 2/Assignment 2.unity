@@ -416,6 +416,8 @@ GameObject:
   - component: {fileID: 340128001}
   - component: {fileID: 340128000}
   - component: {fileID: 340128003}
+  - component: {fileID: 340128004}
+  - component: {fileID: 340128005}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -542,6 +544,54 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!54 &340128004
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340127999}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 20
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &340128005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340127999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &355506956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1134,7 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: 180.66219, y: 144.60573}
+    _translation: {x: -19, y: 118}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1238,10 +1288,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChampionController
   speed: 2.5
-  groundLayerMask:
+  targetableLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   arrivalThreshold: 0.25
+  currentlyAutoing: 0
+  autoPrefab: {fileID: 8140368767720785089, guid: e65305e595237f141a8fd645ec75ca6d, type: 3}
+  autoSlider: {fileID: 525352239}
 --- !u!114 &617713762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,18 +1302,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617713751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9af987810e7bdab409c82de14681d63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   lockCamKey: 121
   focusCamKey: 32
-  speed: 8
-  strengthMod: 0
+  speed: 500
   player: {fileID: 617713758}
-  camLocked: 0
-  absoluteCamLocked: 0
   safeSpace: {fileID: 1490424305}
   safeSpaceLayerMask:
     serializedVersion: 2
@@ -1312,7 +1362,7 @@ MonoBehaviour:
   minionPrefab: {fileID: 6367629086537692875, guid: 50a21b7682ef88845862d753ef86f7d4, type: 3}
   team: 1
   waveSpawnTime: 30
-  numberOfMinions: 0
+  numberOfMinions: 1
   spawnInterval: 1
 --- !u!1 &702888976
 GameObject:
@@ -2497,6 +2547,7 @@ GameObject:
   - component: {fileID: 1390510490}
   - component: {fileID: 1390510484}
   - component: {fileID: 1390510483}
+  - component: {fileID: 1390510491}
   m_Layer: 12
   m_Name: Opponent (ZeWrath)
   m_TagString: Untagged
@@ -2713,6 +2764,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b0eef196c27b444b5bd06abda333ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+--- !u!114 &1390510491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390510482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd237be321198744a4556de31c645b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Targetable
 --- !u!1 &1442720407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1490424303
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,8 +2911,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.70779073, y: 0.000000014901158, z: 0.000000014901158, w: 0.7064222}
   m_LocalPosition: {x: -0, y: 0, z: 2.49}
-  m_LocalScale: {x: 0.47232082, y: 1, z: 0.25079927}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.38900003, y: 0.8235928, z: 0.20655647}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 340128002}
   m_LocalEulerAnglesHint: {x: -89.892, y: 0, z: 0}
@@ -2872,7 +2935,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1490424305
@@ -2882,7 +2945,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490424302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

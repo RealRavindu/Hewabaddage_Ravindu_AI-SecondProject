@@ -37,7 +37,7 @@ namespace NodeCanvas.Tasks.Actions
                 Score score = portalTransform.GetComponent<Score>();
                 score.score++;
                 Debug.Log("My time here is done!");
-                GameObject.Destroy(agent.gameObject);
+                GameObject.DestroyImmediate(agent.gameObject);
                 EndAction(true);
             }
         }

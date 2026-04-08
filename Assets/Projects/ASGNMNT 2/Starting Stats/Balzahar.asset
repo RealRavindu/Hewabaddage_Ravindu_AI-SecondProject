@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13e56d3f364980438ddb9403d98ef0f, type: 3}
   m_Name: Balzahar
   m_EditorClassIdentifier: Assembly-CSharp::StartingStats
-  health: 10
-  attackSpeed: 0.3
+  team: 0
+  health: 15
+  attackSpeed: 0.5
   range: 7
   attackDamage: 2
   abilityPower: 3
   moveSpeed: 3
+  entity: 0
