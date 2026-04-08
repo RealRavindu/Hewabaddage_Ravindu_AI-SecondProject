@@ -48,6 +48,7 @@ public class CameraController : MonoBehaviour
     }
     void MoveCamera()
     {
+        //applying a force in the direction the mouse is FROM the center of the screen so that it simulates the acceleration and deceleration that league's camera has.
         Vector3 direction = (Input.mousePosition - Camera.main.ViewportToScreenPoint(Vector2.one * 0.5f)).normalized;
         Rigidbody camRB = Camera.main.GetComponent<Rigidbody>();
         camRB.AddForce(new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime, ForceMode.Impulse);

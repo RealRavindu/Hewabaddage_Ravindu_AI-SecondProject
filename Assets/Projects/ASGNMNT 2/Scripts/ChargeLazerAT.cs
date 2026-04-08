@@ -8,6 +8,8 @@ namespace NodeCanvas.Tasks.Actions {
 	public class ChargeLazerAT : ActionTask {
 
 		public GameObject lazerSignifier;
+		public float firingOffset;
+		public float chargeTime;
 		protected override string OnInit() {
 			return null;
 		}
