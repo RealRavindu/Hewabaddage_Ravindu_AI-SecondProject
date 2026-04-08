@@ -25,10 +25,8 @@ public class ChampionController : MonoBehaviour
                 currentlyAutoing = false;
                 if(AutoCR != null)
                 {
-                    Debug.Log("stopping coroutine!");
-                    autoSlider.gameObject.SetActive(false);
                     StopCoroutine(AutoCR);
-                    AutoCR = null;
+                    StopAutoCoroutine();
                 }
             }
             _Target = value;
@@ -46,10 +44,14 @@ public class ChampionController : MonoBehaviour
     public float QCooldown;
     public float QRange;
 
+    [Header("Animator")]
+    private Animation animator;
+
     private void Start()
     {
         stats = GetComponent<BaseStats>();
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animation>();
     }
 
     private void Update()
@@ -58,7 +60,6 @@ public class ChampionController : MonoBehaviour
         {
             Clicked();
         }
-
 
         if (Target != null)
         {
@@ -84,11 +85,7 @@ public class ChampionController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] targetableHits = Physics.RaycastAll(ray, Mathf.Infinity, targetableLayerMask);
-        Debug.Log("Targetable hits length: " +  targetableHits.Length);
-        foreach (RaycastHit targetableHit in targetableHits)
-        {
-            Debug.Log(targetableHit.collider.name);
-        }
+
         if (targetableHits.Length >0)
         {
             if (targetableHits[targetableHits.Length-1].transform.GetComponent<BaseStats>() != null)
@@ -98,6 +95,7 @@ public class ChampionController : MonoBehaviour
         } else
         {
             Target = null;
+            animator.Play("Idle1");
         }
         RaycastHit hit;
         Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayerMask);
@@ -116,6 +114,7 @@ public class ChampionController : MonoBehaviour
 
     IEnumerator AutoCoroutine()
     {
+        animator.Play("Idle2");
         currentlyAutoing = true;
         autoTime = 0;
         autoSlider.gameObject.SetActive(true);
@@ -129,17 +128,25 @@ public class ChampionController : MonoBehaviour
             transform.forward = new Vector3(directionToEnemy.x, transform.forward.y, directionToEnemy.z);
             yield return null;
         }
+        if(Target != null) SpawnAuto();
+        StopAutoCoroutine();
+
+    }
+
+    void StopAutoCoroutine()
+    {
         currentlyAutoing = false;
         AutoCR = null;
-        if(Target != null) SpawnAuto();
         autoSlider.gameObject.SetActive(false);
-
+        
     }
     void SpawnAuto()
     {
+        animator.Play("Attack1");
         autoSlider.gameObject.SetActive(false);
         GameObject autoAttackObject = GameObject.Instantiate(autoPrefab);
         AutoAttack autoattack = autoAttackObject.GetComponent<AutoAttack>();
         autoattack.Init(stats.attackSpeed, stats.attackDamage, Target.transform, transform.position, stats.blueMat);
+        animator.PlayQueued("Idle1");
     }
 }

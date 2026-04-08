@@ -15,7 +15,8 @@ public class BaseStats : MonoBehaviour
         {
             _team = value;
             gameObject.layer = LayerMask.NameToLayer((value == 0) ? "BlueTeam" : "RedTeam");
-            GetComponent<MeshRenderer>().material = (value == 0) ? blueMat : redMat;
+            if(entity == entityType.Minion) GetComponent<MeshRenderer>().material = (value == 0) ? blueMat : redMat;
+
         }
     }
     private float _team;
