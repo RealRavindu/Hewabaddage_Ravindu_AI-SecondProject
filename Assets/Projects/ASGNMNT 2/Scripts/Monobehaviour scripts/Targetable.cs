@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Targetable : MonoBehaviour
@@ -8,6 +9,12 @@ public class Targetable : MonoBehaviour
     private MaterialPropertyBlock mPB;
     private void Start()
     {
+        StartCoroutine(InitTargetable());
+    }
+
+    private IEnumerator InitTargetable()
+    {
+        yield return null;
         baseStats = GetComponent<BaseStats>();
         team = baseStats.team;
         mR = GetComponent<MeshRenderer>();

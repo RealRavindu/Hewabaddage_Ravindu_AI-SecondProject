@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChampionController : MonoBehaviour
 {
     public float speed;
-    public LayerMask targetableLayerMask;
+    public LayerMask groundLayerMask, targetableLayerMask;
     private Vector3 moveToPos;
     private Rigidbody rb;
     public float arrivalThreshold;
@@ -26,6 +26,7 @@ public class ChampionController : MonoBehaviour
                 if(AutoCR != null)
                 {
                     Debug.Log("stopping coroutine!");
+                    autoSlider.gameObject.SetActive(false);
                     StopCoroutine(AutoCR);
                     AutoCR = null;
                 }
@@ -82,23 +83,30 @@ public class ChampionController : MonoBehaviour
     void Clicked()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity, targetableLayerMask);
-        Debug.Log(hits.Length);
-        if (hits.Length == 0) return;
-        else if (hits.Length == 1) Target = null;
-        else if (hits.Length > 1)
+        RaycastHit[] targetableHits = Physics.RaycastAll(ray, Mathf.Infinity, targetableLayerMask);
+        Debug.Log("Targetable hits length: " +  targetableHits.Length);
+        foreach (RaycastHit targetableHit in targetableHits)
         {
-            Debug.Log("More than 1 hits, hits[0]: " + hits[0].collider.name + " |hits[hits.Length-1]: " + hits[hits.Length - 1].collider.name);
-            if (hits[hits.Length-1].transform.GetComponent<BaseStats>() != null)
+            Debug.Log(targetableHit.collider.name);
+        }
+        if (targetableHits.Length >0)
+        {
+            if (targetableHits[targetableHits.Length-1].transform.GetComponent<BaseStats>() != null)
             {
-                Target = hits[hits.Length - 1].transform.gameObject;
+                Target = targetableHits[targetableHits.Length - 1].transform.gameObject;
             }
-        } 
-        
-        moveToPos = hits[0].point;
-        Vector3 directionToMouse = moveToPos - transform.position;
-        transform.forward = new Vector3(directionToMouse.x, transform.forward.y, directionToMouse.z);
-
+        } else
+        {
+            Target = null;
+        }
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayerMask);
+        if(hit.collider != null)
+        {
+            moveToPos = hit.point;
+            Vector3 directionToMouse = moveToPos - transform.position;
+            transform.forward = new Vector3(directionToMouse.x, transform.forward.y, directionToMouse.z);
+        }
     }
 
     void MoveToNewPosition(float speed, Vector3 direction)
