@@ -155,6 +155,150 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &145013688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145013689}
+  - component: {fileID: 145013691}
+  - component: {fileID: 145013690}
+  m_Layer: 5
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &145013689
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145013688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1254527980}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 106, y: 39}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &145013690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145013688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Right click to move.
+
+    Right click enemies to attack.
+
+    Hold Space
+    to focus camera on player
+
+    Press Y to lock camera to player'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 13
+  m_fontSizeBase: 13
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -208.80403, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &145013691
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145013688}
+  m_CullTransparentMesh: 1
 --- !u!1 &245917786
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 340127999}
   serializedVersion: 2
   m_LocalRotation: {x: 0.51460266, y: 0.16062957, z: -0.07140588, w: 0.83921605}
-  m_LocalPosition: {x: -6.59, y: 11.83, z: -7.79}
+  m_LocalPosition: {x: 0.4, y: 14.13, z: -6.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1054,6 +1198,7 @@ GameObject:
   - component: {fileID: 617713755}
   - component: {fileID: 617713754}
   - component: {fileID: 617713759}
+  - component: {fileID: 617713763}
   - component: {fileID: 617713761}
   - component: {fileID: 617713762}
   - component: {fileID: 617713753}
@@ -1134,7 +1279,7 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: -19, y: 118}
+    _translation: {x: -9, y: 149}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1157,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseStats
   startingStats: {fileID: 11400000, guid: 4c497192860689c49a58af4f03e98e0c, type: 2}
+  regenRate: 0
   attackSpeed: 0.3
   range: 7
   attackDamage: 2
@@ -1307,19 +1453,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617713751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9af987810e7bdab409c82de14681d63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   lockCamKey: 121
   focusCamKey: 32
-  speed: 500
+  speed: 0
   player: {fileID: 617713758}
   safeSpace: {fileID: 1490424305}
   safeSpaceLayerMask:
     serializedVersion: 2
     m_Bits: 16384
+--- !u!114 &617713763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617713751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd88020a85260424b8b87c0e1d40cb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthRegen
 --- !u!1 &670022559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1525,7 @@ MonoBehaviour:
   minionPrefab: {fileID: 6367629086537692875, guid: 50a21b7682ef88845862d753ef86f7d4, type: 3}
   team: 1
   waveSpawnTime: 30
-  numberOfMinions: 1
+  numberOfMinions: 4
   spawnInterval: 1
 --- !u!1 &702888976
 GameObject:
@@ -2299,6 +2457,7 @@ RectTransform:
   m_Children:
   - {fileID: 305879311}
   - {fileID: 702888977}
+  - {fileID: 145013689}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2581,6 +2740,7 @@ GameObject:
   - component: {fileID: 1390510485}
   - component: {fileID: 1390510489}
   - component: {fileID: 1390510490}
+  - component: {fileID: 1390510492}
   - component: {fileID: 1390510484}
   - component: {fileID: 1390510483}
   - component: {fileID: 1390510491}
@@ -2612,6 +2772,7 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"attackDamage":{"_propertyPath":"BaseStats.attackDamage","_name":"attackDamage","_id":"0cf9a372-50bb-4c37-9819-9b82e36f9458","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"abilityPower":{"_propertyPath":"BaseStats.abilityPower","_name":"abilityPower","_id":"7f660568-0b29-4dba-9089-69cef036d984","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"moveSpeed":{"_propertyPath":"BaseStats.moveSpeed","_name":"moveSpeed","_id":"1ba55a5e-7213-480f-ae4f-cf9211e12a7e","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"QCooldown":{"_value":10.0,"_name":"QCooldown","_id":"1811eedd-b572-4ed6-9bfb-d487317d4872","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
@@ -2639,6 +2800,9 @@ MonoBehaviour:
   - _json: '{"_propertyPath":"BaseStats.moveSpeed","_name":"moveSpeed","_id":"1ba55a5e-7213-480f-ae4f-cf9211e12a7e","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
+  - _json: '{"_value":10.0,"_name":"QCooldown","_id":"1811eedd-b572-4ed6-9bfb-d487317d4872","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!114 &1390510484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2652,7 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.BehaviourTrees.BehaviourTreeOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":466.8839,"y":222.7703},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"isDynamic":true,"_condition":{"AARange":{"_name":"range","_targetVariableID":"66b481d6-5898-4ed4-8c2a-5d3aa8bf3169"},"target":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"$type":"NodeCanvas.Tasks.Conditions.CheckEnemiesInRangeCT"},"_position":{"x":163.9791,"y":348.956},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"1"},{"_action":{"AggressWaypoint":1,"moveSpeed":{"_name":"moveSpeed","_targetVariableID":"1ba55a5e-7213-480f-ae4f-cf9211e12a7e"},"choiceRadius":2.0,"arrivalThreshold":0.25,"$type":"NodeCanvas.Tasks.Actions.AggressAT"},"_position":{"x":182.9847,"y":535.6228},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"isDynamic":true,"_condition":{"AARange":{"_name":"range","_targetVariableID":"66b481d6-5898-4ed4-8c2a-5d3aa8bf3169"},"target":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckEnemiesInRangeCT"},"_position":{"x":666.7592,"y":370.4413},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"3"},{"_action":{"targetTransform":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"attackSpeed":{"_name":"attackSpeed","_targetVariableID":"bfa30630-0326-4540-9ab0-a0be78f8b116"},"attackDamage":{"_name":"attackDamage","_targetVariableID":"0cf9a372-50bb-4c37-9819-9b82e36f9458"},"autoPrefab":2,"autoSlider":3,"$type":"NodeCanvas.Tasks.Actions.AutoAttackAT"},"_position":{"x":749.4101,"y":542.1573},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"coolDownTime":{"_value":2.0},"_position":{"x":-173.6709,"y":86.35127},"$type":"NodeCanvas.BehaviourTrees.Cooldown"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":466.8839,"y":222.7703},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"coolDownTime":{"_name":"QCooldown","_targetVariableID":"1811eedd-b572-4ed6-9bfb-d487317d4872"},"_position":{"x":-96.89548,"y":368.895},"$type":"NodeCanvas.BehaviourTrees.Cooldown","$id":"1"},{"_position":{"x":-93.84587,"y":506.0971},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.ChargeLazerAT"},"_position":{"x":-221.2081,"y":638.4869},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.LazerAT"},"_position":{"x":-11.73077,"y":641.8384},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"isDynamic":true,"_condition":{"AARange":{"_name":"range","_targetVariableID":"66b481d6-5898-4ed4-8c2a-5d3aa8bf3169"},"target":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"$type":"NodeCanvas.Tasks.Conditions.CheckEnemiesInRangeCT"},"_position":{"x":163.9791,"y":348.956},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"5"},{"coolDownTime":{"_value":8.0},"_position":{"x":171.5101,"y":513.29},"$type":"NodeCanvas.BehaviourTrees.Cooldown","$id":"6"},{"_action":{"AggressWaypoint":1,"moveSpeed":{"_name":"moveSpeed","_targetVariableID":"1ba55a5e-7213-480f-ae4f-cf9211e12a7e"},"choiceRadius":2.0,"arrivalThreshold":0.25,"$type":"NodeCanvas.Tasks.Actions.AggressAT"},"_position":{"x":182.9847,"y":659.8879},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"isDynamic":true,"_condition":{"AARange":{"_name":"range","_targetVariableID":"66b481d6-5898-4ed4-8c2a-5d3aa8bf3169"},"target":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckEnemiesInRangeCT"},"_position":{"x":666.7592,"y":370.4413},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"8"},{"_action":{"targetTransform":{"_name":"target","_targetVariableID":"706eeb81-4d71-4fa2-903d-a2cd80add7af"},"attackSpeed":{"_name":"attackSpeed","_targetVariableID":"bfa30630-0326-4540-9ab0-a0be78f8b116"},"attackDamage":{"_name":"attackDamage","_targetVariableID":"0cf9a372-50bb-4c37-9819-9b82e36f9458"},"autoPrefab":2,"autoSlider":3,"$type":"NodeCanvas.Tasks.Actions.AutoAttackAT"},"_position":{"x":749.4101,"y":542.1573},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1325718427}
@@ -2662,8 +2826,8 @@ MonoBehaviour:
     _version: 3.41
     _category: 
     _comments: 
-    _translation: {x: 103, y: 164}
-    _zoomFactor: 0.5971811
+    _translation: {x: 196.95096, y: 18.132696}
+    _zoomFactor: 0.596722
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -2782,6 +2946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseStats
   startingStats: {fileID: 11400000, guid: c7bf1477030bef3458506e72bd43b36b, type: 2}
+  regenRate: 0
   attackSpeed: 0.3
   range: 7
   attackDamage: 2
@@ -2814,6 +2979,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd237be321198744a4556de31c645b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Targetable
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+--- !u!114 &1390510492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390510482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd88020a85260424b8b87c0e1d40cb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthRegen
 --- !u!1 &1442720407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,8 +3163,8 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490424302}
-  m_Enabled: 0
-  m_CastShadows: 1
+  m_Enabled: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3001,7 +3181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 6bb717a16bbb99445bcd07306f4556d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

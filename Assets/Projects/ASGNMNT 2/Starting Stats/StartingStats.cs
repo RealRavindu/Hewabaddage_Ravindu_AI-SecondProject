@@ -6,6 +6,7 @@ public class StartingStats : ScriptableObject
 {
     public float team;
     public float health;
+    public float regenRate;
     public float attackSpeed;
     public float range;
     public float attackDamage;

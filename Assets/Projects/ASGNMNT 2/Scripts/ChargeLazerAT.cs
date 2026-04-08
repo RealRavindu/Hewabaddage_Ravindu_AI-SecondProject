@@ -7,16 +7,12 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class ChargeLazerAT : ActionTask {
 
-		private NavMeshAgent navAgent;
-		public BBParameter<Transform> targetTransform;
+		public GameObject lazerSignifier;
 		protected override string OnInit() {
-			navAgent = agent.GetComponent<NavMeshAgent>();
 			return null;
 		}
 
 		protected override void OnExecute() {
-			Debug.Log("Path is stopped");
-			navAgent.isStopped = true;
 
 		}
 

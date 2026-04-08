@@ -31,6 +31,7 @@ public class BaseStats : MonoBehaviour
     }
 
     private float _health;
+    public float regenRate;
 
     public float attackSpeed;
     public float range;

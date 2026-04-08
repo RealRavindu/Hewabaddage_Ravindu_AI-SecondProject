@@ -132,6 +132,7 @@ public class ChampionController : MonoBehaviour
         currentlyAutoing = false;
         AutoCR = null;
         if(Target != null) SpawnAuto();
+        autoSlider.gameObject.SetActive(false);
 
     }
     void SpawnAuto()

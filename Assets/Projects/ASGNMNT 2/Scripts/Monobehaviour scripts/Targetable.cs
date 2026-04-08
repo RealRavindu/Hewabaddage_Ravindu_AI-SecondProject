@@ -7,6 +7,7 @@ public class Targetable : MonoBehaviour
     private float team;
     private MeshRenderer mR;
     private MaterialPropertyBlock mPB;
+    public LayerMask enemyLayerMask;
     private void Start()
     {
         StartCoroutine(InitTargetable());
@@ -19,6 +20,11 @@ public class Targetable : MonoBehaviour
         team = baseStats.team;
         mR = GetComponent<MeshRenderer>();
         mPB = new MaterialPropertyBlock();
+    }
+
+    private void Update()
+    {
+        
     }
     private void OnMouseEnter()
     {
