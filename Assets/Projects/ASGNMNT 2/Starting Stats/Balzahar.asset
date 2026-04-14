@@ -15,7 +15,7 @@ MonoBehaviour:
   team: 0
   health: 20
   regenRate: 0.5
-  attackSpeed: 0.5
+  attackSpeed: 0.68
   range: 7
   attackDamage: 2
   abilityPower: 3

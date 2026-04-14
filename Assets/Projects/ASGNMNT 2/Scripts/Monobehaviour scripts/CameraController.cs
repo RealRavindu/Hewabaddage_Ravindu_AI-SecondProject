@@ -5,19 +5,22 @@ public class CameraController : MonoBehaviour
     public KeyCode lockCamKey;
     public KeyCode focusCamKey;
     public float speed;
-    public Transform player;
+    private Transform player;
     private bool camLocked, absoluteCamLocked;
     private Vector3 camLockPosOffset;
     public float edgeThreshold;
+    public float scrollAmount;
+    public float minScroll, maxScroll;
     private void Start()
     {
         camLockPosOffset = Camera.main.transform.position;
+        player = GetComponent<Transform>();
     }
     private void Update()
     {
         if (camLocked || absoluteCamLocked)
         {
-            Camera.main.transform.position = camLockPosOffset + new Vector3(player.position.x, 0, player.position.z);
+            Camera.main.transform.position = camLockPosOffset + new Vector3(player.position.x, scrollAmount, player.position.z);
         }
 
         //alternating camLocked & absoluteCamLocked bool to lock and unlock camera
@@ -33,6 +36,12 @@ public class CameraController : MonoBehaviour
         {
             camLocked = false;
         }
+
+        //camera zoom in
+        scrollAmount -= Input.mouseScrollDelta.y;
+        scrollAmount = Mathf.Clamp(scrollAmount, minScroll, maxScroll);
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, scrollAmount, Camera.main.transform.position.z);
+
 
         if (!absoluteCamLocked)
         {
@@ -53,5 +62,7 @@ public class CameraController : MonoBehaviour
         Rigidbody camRB = Camera.main.GetComponent<Rigidbody>();
         camRB.AddForce(new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime, ForceMode.Impulse);
     }
+
+    
 
 }

@@ -399,8 +399,10 @@ MonoBehaviour:
   lockCamKey: 121
   focusCamKey: 32
   speed: 500
-  player: {fileID: 0}
   edgeThreshold: 0.07
+  scrollAmount: 14.13
+  minScroll: 5
+  maxScroll: 15
 --- !u!114 &280794908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseStats
   startingStats: {fileID: 11400000, guid: 4c497192860689c49a58af4f03e98e0c, type: 2}
   regenRate: 0
-  attackSpeed: 0.3
+  attackSpeed: 0.6
   range: 7
   attackDamage: 2
   abilityPower: 6
@@ -2807,7 +2809,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -3970243614316841892, guid: ab20f826cba7d8947b1b64555974ab62, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 2096871601}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2107409826236812522, guid: ab20f826cba7d8947b1b64555974ab62, type: 3}
