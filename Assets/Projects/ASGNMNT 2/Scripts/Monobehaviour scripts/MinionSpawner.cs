@@ -28,6 +28,7 @@ public class MinionSpawner : MonoBehaviour
         while(numberSpawned < numberOfMinions)
         {
             GameObject spawnedMinion = Instantiate(minionPrefab);
+            spawnedMinion.GetComponent<BaseStats>().entity = entityType.Minion;
             spawnedMinion.GetComponent<BaseStats>().team = team;
             spawnedMinion.transform.position = transform.position;
             numberSpawned++;

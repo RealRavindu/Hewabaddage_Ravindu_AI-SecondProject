@@ -21,7 +21,6 @@ public class ChampionController : MonoBehaviour
         {
             if(value == null)
             {
-                Debug.Log("value is null");
                 currentlyAutoing = false;
                 if(AutoCR != null)
                 {

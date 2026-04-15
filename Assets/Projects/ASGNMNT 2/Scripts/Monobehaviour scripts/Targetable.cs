@@ -6,6 +6,7 @@ public class Targetable : MonoBehaviour
     private BaseStats baseStats;
     private float team;
     private MeshRenderer mR;
+    private SkinnedMeshRenderer sMR;
     private MaterialPropertyBlock mPB;
     public LayerMask enemyLayerMask;
     private void Start()
@@ -17,24 +18,33 @@ public class Targetable : MonoBehaviour
     {
         yield return null;
         baseStats = GetComponent<BaseStats>();
+        if(baseStats == null) baseStats = transform.parent.GetComponent<BaseStats>();
         team = baseStats.team;
         mR = GetComponent<MeshRenderer>();
+        sMR = GetComponent<SkinnedMeshRenderer>();
         mPB = new MaterialPropertyBlock();
     }
 
-    private void Update()
-    {
-        
-    }
     private void OnMouseEnter()
     {
         if(team == 1)
         {
-            mR.GetPropertyBlock(mPB);
+            if(mR != null)
+            {
+                mR.GetPropertyBlock(mPB);
 
-            mPB.SetFloat("_mouseIsHovering", 1);
+                mPB.SetFloat("_mouseIsHovering", 1);
 
-            mR.SetPropertyBlock(mPB);
+                mR.SetPropertyBlock(mPB);
+            } else
+            {
+                sMR.GetPropertyBlock(mPB);
+
+                mPB.SetFloat("_mouseIsHovering", 1);
+
+                sMR.SetPropertyBlock(mPB);
+            }
+            
         }
     }
 
@@ -42,11 +52,22 @@ public class Targetable : MonoBehaviour
     {
         if (team == 1)
         {
-            mR.GetPropertyBlock(mPB);
+            if (mR != null)
+            {
+                mR.GetPropertyBlock(mPB);
 
-            mPB.SetFloat("_mouseIsHovering", 0);
+                mPB.SetFloat("_mouseIsHovering", 0);
 
-            mR.SetPropertyBlock(mPB);
+                mR.SetPropertyBlock(mPB);
+            }
+            else
+            {
+                sMR.GetPropertyBlock(mPB);
+
+                mPB.SetFloat("_mouseIsHovering", 0);
+
+                sMR.SetPropertyBlock(mPB);
+            }
         }
     }
 }

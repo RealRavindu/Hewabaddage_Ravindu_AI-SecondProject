@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Portal
+  - Champion
+  - Minion
+  - Neutral Mob
+  - Structure
   layers:
   - Default
   - TransparentFX

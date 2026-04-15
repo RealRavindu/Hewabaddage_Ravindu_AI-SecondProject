@@ -3,8 +3,25 @@ using UnityEngine.UI;
 
 public class BaseStats : MonoBehaviour
 {
+    public bool isAlive = true;
+    public bool isPlayer;
     public StartingStats startingStats;
     private Health healthScript;
+    public HurtAnimator hurtAnimator;
+
+    public entityType entity;
+    private entityType _entityType
+    {
+        get
+        {
+            return _entityType;
+        }
+        set
+        {
+            _entityType = value;
+            tag = value.ToString();
+        }
+    }
     public float team
     {
         get
@@ -25,6 +42,10 @@ public class BaseStats : MonoBehaviour
         get { return _health; }
         set
         {
+            if(_health > value)
+            {
+                hurtAnimator.StartHurtCoroutine();
+            }
             _health = value;
             _healthSlider.value = health;
             if (value <= 0) healthScript.OnDeath(entity);
@@ -39,24 +60,12 @@ public class BaseStats : MonoBehaviour
     public float attackDamage;
     public float abilityPower;
     public float moveSpeed;
-    public entityType entity;
-    private entityType _entityType
-    {
-        get
-        {
-            return _entityType;
-        }
-        set
-        {
-            _entityType = value;
-            tag = value.ToString();
-        }
-    }
     public Material blueMat, redMat;
     private Slider _healthSlider;
 
     private void Start()
     {
+        entity = startingStats.entity;
         healthScript = GetComponent<Health>();
         _healthSlider = transform.GetChild(0).GetChild(1).GetComponent<Slider>();
         health = _healthSlider.maxValue = startingStats.health;
