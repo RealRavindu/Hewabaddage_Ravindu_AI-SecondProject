@@ -128,4 +128,4 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 8192
-  speed: 4
+  speed: 6

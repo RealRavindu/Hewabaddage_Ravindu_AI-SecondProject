@@ -26,7 +26,7 @@ namespace NodeCanvas.Tasks.Actions {
 			timePassed = 0;
 
             directionToFire = targetPos.value - agent.transform.position;
-			directionToFire.y = 0;
+			directionToFire.y = 0.1f;
             agent.transform.forward = new Vector3(directionToFire.x, agent.transform.forward.y, directionToFire.z); //faces target
 
             lazerSignifier = GameObject.Instantiate(lazerSignifierPrefab);
